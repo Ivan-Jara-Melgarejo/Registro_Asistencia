@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Registro</h1>
+        <form id="editarForm" action="update.php" method="POST">
+            <input type="hidden" id="id" name="id">
+
+            <label for="nombre_profesor">Nombre del profesor:</label>
+            <input type="text" id="nombre_profesor" name="nombre_profesor" required>
+
+            <label for="apellido_profesor">Apellido del profesor:</label>
+            <input type="text" id="apellido_profesor" name="apellido_profesor" required>
+
+            <label for="fecha_curso">Fecha del curso (DD/MM/AAAA):</label>
+            <input type="date" id="fecha_curso" name="fecha_curso" required>
+
+            <label for="curso">Curso que dicta:</label>
+            <input type="text" id="curso" name="curso" required>
+
+            <label for="hora_inicio_planificada">Hora planificada de inicio:</label>
+            <input type="time" id="hora_inicio_planificada" name="hora_inicio_planificada" required>
+
+            <label for="hora_fin_planificada">Hora planificada de fin:</label>
+            <input type="time" id="hora_fin_planificada" name="hora_fin_planificada" required>
+
+            <label for="asistencia">Asistencia:</label>
+            <select id="asistencia" name="asistencia" required>
+                <option value="SI">SI</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <div id="asistencia_si" class="conditional-inputs">
+                <label for="hora_inicio_asistencia">Hora de inicio:</label>
+                <input type="time" id="hora_inicio_asistencia" name="hora_inicio_asistencia">
+
+                <label for="hora_fin_asistencia">Hora de fin:</label>
+                <input type="time" id="hora_fin_asistencia" name="hora_fin_asistencia">
+            </div>
+
+            <div id="asistencia_no" class="conditional-inputs">
+                <label for="tipo_inasistencia">Tipo de inasistencia:</label>
+                <select id="tipo_inasistencia" name="tipo_inasistencia">
+                    <option value="JUSTIFICADA">JUSTIFICADA</option>
+                    <option value="NO JUSTIFICADA">NO JUSTIFICADA</option>
+                </select>
+
+                <label for="descripcion_causa">Descripción de la causa:</label>
+                <textarea id="descripcion_causa" name="descripcion_causa"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Guardar Cambios</button>
+            <a href="crud.html" class="btn btn-cancel">Cancelar</a>
+        </form>
+    </div>
+
+    <script src="editar.js"></script>
+</body>
+</html>
